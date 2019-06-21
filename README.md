@@ -1,0 +1,2 @@
+# JSTraining
+JavaScript Learning Only
