@@ -91,3 +91,205 @@ const temp1 = 36.9;
 const temp2 = 37.6;
 const temp3 = 37.1;
 console.log(temp1, temp2, temp3); // "36.9 37.6 37.1"
+
+const nombre = Number(prompt("Entrez un nombre :"));
+if (nombre > 0) {
+  console.log(nombre + " est positif");
+}
+/* demander un nombre
+si le nombre est positif, alors il sera indiqué comme positif */
+
+if (true) {
+  // la condition du if est toujours vraie :
+  // les instructions de ce bloc seront toujours exécutées
+}
+if (false) {
+  // la condition du if est toujours fausse :
+  // les instructions de ce bloc ne seront jamais exécutées
+}
+
+// === egal a
+// !== different de
+// < inferieur a
+// <= inferieur ou egal
+// > superieur
+// >= superieur ou egal
+
+const nombre = Number(prompt("Entrez un nombre :"));
+if (nombre > 0) {
+  console.log(nombre + " est positif");
+}
+else {
+  console.log(nombre + " est négatif ou nul");
+}
+
+const nombre = Number(prompt("Entrez un nombre :"));
+if (nombre > 0) {
+  console.log(nombre + " est positif");
+} else { // nombre <= 0
+  if (nombre < 0) {
+    console.log(nombre + " est négatif");
+  } else { // nombre === 0
+    console.log(nombre + " est nul");
+  }
+}
+
+// pour développer des conditions imbriquée, il est impératif de passer par un diagramme de flux
+// (ou tres conseille)
+
+const nombre = Number(prompt("Entrez un nombre :"));
+if (nombre > 0) {
+  console.log(nombre + " est positif");
+} else if (nombre < 0) {
+  console.log(nombre + " est négatif");
+} else {
+  console.log(nombre + " est nul");
+}
+
+if ((nombre >= 0) && (nombre <= 100)) {
+  console.log(nombre + " est compris entre 0 et 100");
+}
+
+console.log(true && true);   // true
+console.log(true && false);  // false
+console.log(false && true);  // false
+console.log(false && false); // false
+
+if ((nombre < 0) || (nombre > 100)) {
+  console.log(nombre + " est en dehors de l'intervalle [0, 100]");
+}
+
+console.log(true || true);   // true
+console.log(true || false);  // true
+console.log(false || true);  // true
+console.log(false || false); // false
+
+if (!(nombre > 100)) {
+  console.log(nombre + " est inférieur ou égal à 100");
+}
+
+console.log(!true);  // false
+console.log(!false); // true
+
+
+//conseil meteo ;)
+const meteo = prompt("Quel temps fait-il dehors ?");
+if (meteo === "soleil") {
+  console.log("Sortez en t-shirt.");
+} else if (meteo === "vent") {
+  console.log("Sortez en pull.");
+} else if (meteo === "pluie") {
+  console.log("Sortez en blouson.");
+} else if (meteo === "neige") {
+  console.log("Restez au chaud à la maison.");
+} else {
+  console.log("Je n'ai pas compris !");
+}
+
+// format switch
+const meteo = prompt("Quel temps fait-il dehors ?");
+switch (meteo) {
+  case "soleil":
+    console.log("Sortez en t-shirt.");
+    break;
+  case "vent":
+    console.log("Sortez en pull.");
+    break;
+  case "pluie":
+    console.log("Sortez en blouson.");
+    break;
+  case "neige":
+    console.log("Restez au chaud à la maison.");
+    break;
+  default:
+    console.log("Je n'ai pas compris !");
+}
+
+/*
+switch (expression) {
+  case valeur1:
+    // instructions exécutées quand expression vaut valeur1
+    break;
+  case valeur2:
+    // instructions exécutées quand expression vaut valeur2
+    break;
+  ...
+  default:
+    // instructions exécutées quand aucune des valeurs ne correspond
+}
+*/
+
+const jourActuel = "dimanche";
+let jourSuivant = "";
+
+switch (jourActuel) {
+  case "lundi":
+    jourSuivant = "mardi";
+    break;
+  case "mardi":
+    jourSuivant = "mercredi";
+    break;
+  case "mercredi":
+    jourSuivant = "jeudi";
+    break;
+  case "jeudi":
+    jourSuivant = "vendredi";
+    break;
+  case "vendredi":
+    jourSuivant = "samedi";
+    break;
+  case "samedi":
+    jourSuivant = "dimanche";
+    break;
+  case "dimanche":
+    jourSuivant = "une nouvelle semaine ^^";
+    break;
+  default:
+    console.log("Je n'ai pas compris !");
+}
+
+if (jourSuivant !== "") {
+  console.log(`Demain, nous serons ${jourSuivant}`);  
+}
+
+
+let heures = 23; // Faire varier cette variable entre 0 et 23
+let minutes = 59; // faire varier cette variable entre 0 et 59
+let secondes = 33; // faire varier cette variable entre 0 et 59
+
+let heureSuivante = heures;
+let minuteSuivante = minutes;
+let secondeSuivante = secondes + 1;
+
+if (secondes === 59) {
+  secondeSuivante = 00;
+  minuteSuivante ++;
+  if (minutes === 59) {
+    minuteSuivante = 00;
+    heureSuivante ++;
+    if (heures === 23) {
+      heureSuivante = 00;
+    }
+  }
+}
+
+console.log(`il sera ${heureSuivante}h${minuteSuivante}m${secondeSuivante}s dans 1 seconde`);
+
+
+const moyenne = 21;
+
+if (moyenne < 10){
+  console.log("nul, recalé");
+}
+  else if ((moyenne >= 10) && (moyenne <= 12)) {
+    console.log("ca passe pour cette fois");
+  }
+  else if ((moyenne > 12) && (moyenne <= 20)) {
+    console.log("recu avec mention, tu seras peut-etre developpeur un jour !");
+  }
+  else if (moyenne > 20) {
+    console.log("TRICHEUR !");
+  }
+
+
+  
