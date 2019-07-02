@@ -281,15 +281,95 @@ const moyenne = 21;
 if (moyenne < 10){
   console.log("nul, recalé");
 }
-  else if ((moyenne >= 10) && (moyenne <= 12)) {
+else if ((moyenne >= 10) && (moyenne <= 12)) {
     console.log("ca passe pour cette fois");
-  }
-  else if ((moyenne > 12) && (moyenne <= 20)) {
+}
+else if ((moyenne > 12) && (moyenne <= 20)) {
     console.log("recu avec mention, tu seras peut-etre developpeur un jour !");
-  }
-  else if (moyenne > 20) {
+}
+else if (moyenne > 20) {
     console.log("TRICHEUR !");
+}
+
+
+console.log("Début du programme");
+let nombre = 1;
+while (nombre <= 5) {
+    console.log(nombre);
+    nombre++;
+}
+console.log("Fin du programme");
+
+let compteur;
+for (compteur = 1; compteur <= 5; compteur++) {
+    console.log(compteur);
+}
+
+/*
+for (initialisation; condition; étape) {
+    // instructions exécutées tant que la condition est vérifiée
+}
+*/
+
+for (let i = 1; i <= 5; i++) {
+  console.log(i); // OK
+}
+console.log(i); // Erreur : la variable i n'est pas visible ici
+
+let nombre = 1;
+while (nombre <= 5) {
+    console.log(nombre);
+    // La variable n'est plus modifiée : la condition sera toujours vraie
+}
+
+const nombre = 10; // Faites varier cette variable entre 1 et 10
+
+console.log(`Table de multiplication de ${nombre}`);
+
+let multiplicateur = 0;
+
+while (multiplicateur <= 10){
+  let resultat = multiplicateur*nombre;
+  console.log(`${nombre} x ${multiplicateur} = ${resultat}`)
+  multiplicateur ++;
+}
+
+console.log("fin de a table, tapez un autre nombre")
+
+const nombre = 10; // Faites varier cette variable entre 1 et 10
+
+console.log(`Table de multiplication de ${nombre}`);
+
+let multiplicateur = 0;
+
+while (multiplicateur <= 10){
+  let resultat = multiplicateur*nombre;
+  console.log(`${nombre} x ${multiplicateur} = ${resultat}`)
+  multiplicateur ++;
+}
+
+console.log("fin de a table, tapez un autre nombre")
+
+//FizzBuzzTest
+console.log("FizzBuzzTest");
+
+let nombre;
+
+for (nombre = 1; nombre <= 100; nombre ++){
+  let div3 = nombre % 3;
+  let div5 = nombre % 5;
+  if ((div3 = 0) && (div5 != 0)){
+    console.log("Fizz")
   }
+  else if ((div3 != 0) && (div5 = 0)){
+    console.log("Buzz")
+  }
+  else if ((div3 = 0) && (div5 = 0)){
+    console.log("FizzBuzz")
+  }
+  else {
+    console.log(`${nombre}`)
+  }
+}
 
-
-  
+console.log("Fin du programme")
