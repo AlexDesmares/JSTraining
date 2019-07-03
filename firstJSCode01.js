@@ -373,3 +373,128 @@ for (nombre = 1; nombre <= 100; nombre ++){
 }
 
 console.log("Fin du programme");
+
+//functions
+function direBonjour() {
+  console.log("Bonjour !");
+}
+
+console.log("Début du programme");
+direBonjour();
+console.log("Fin du programme");
+
+function direBonjour() {
+  return "Bonjour !";
+}
+
+console.log("Début du programme");
+const resultat = direBonjour();
+console.log(resultat); // "Bonjour !"
+console.log("Fin du programme");
+
+function direBonjour() {
+  const message = "Bonjour !";
+  return message;
+}
+
+console.log(direBonjour()); // "Bonjour !"
+
+function direBonjour(prenom) {
+  const message = `Bonjour, ${prenom} !`;
+  return message;
+}
+
+console.log(direBonjour("Baptiste")); // "Bonjour, Baptiste !"
+console.log(direBonjour("Sophie")); // "Bonjour, Sophie !"
+
+function direBonjour(prenom) {
+  // Ici, prenom est le paramètre de la fonction
+  const message = `Bonjour, ${prenom} !`;
+  return message;
+}
+
+// Ici, prenom est une variable utilisée comme argument
+let prenom = "Baptiste";
+console.log(direBonjour(prenom)); // "Bonjour, Baptiste !"
+prenom = "Thomas";
+console.log(direBonjour(prenom)); // "Bonjour, Thomas!"
+
+const bonjour = function(prenom) {
+  const message = `Bonjour, ${prenom} !`;
+  return message;
+}
+
+console.log(bonjour("Thomas")); // "Bonjour, Thomas !"
+
+const bonjour = (prenom) => {
+  const message = `Bonjour, ${prenom} !`;
+  return message;
+}
+
+console.log(bonjour("Thomas")); // "Bonjour, Thomas !"
+
+//exercice 1
+// Renvoie le carré de x
+function carre1(x) {
+  const resultat = x * x;
+  return resultat;
+}
+
+// Renvoie le carré de x
+const carre2 = x => {
+  const resultat = x * x;
+  return resultat;
+}
+
+console.log(carre1(0)); // 0
+console.log(carre1(7)); // 4
+console.log(carre1(5)); // 25
+
+console.log(carre2(0)); // 0
+console.log(carre2(8)); // 4
+console.log(carre2(100)); // 25
+
+//exercice 2
+function min(nombre1, nombre2) {
+  if (nombre1 < nombre2){
+    let resultat = nombre1;
+    return resultat;
+  }
+  else if (nombre2 < nombre1){
+    let resultat = nombre2;
+    return resultat;
+  }
+  else {
+    return "equal"
+  }
+}
+
+console.log(min(4.5, 5)); // 4.5
+console.log(min(19, 9));  // 9
+console.log(min(1, 1));   // equal
+
+//exercice 3
+function calculer(nombre1, operator, nombre2){
+  if (operator === "+"){
+    const resultat = nombre1 + nombre2;
+    return resultat;
+  }
+  else if (operator === "-"){
+    const resultat = nombre1 - nombre2;
+    return resultat;
+  }
+  else if (operator === "*"){
+    const resultat = nombre1 * nombre2;
+    return resultat;
+  }
+  else if (operator === "/"){
+    const resultat = nombre1 / nombre2;
+    return resultat;
+  }
+}
+
+console.log(calculer(4, "+", 6));  // 10
+console.log(calculer(4, "-", 6));  // -2
+console.log(calculer(2, "*", 0));  // 0
+console.log(calculer(12, "/", 0)); // Infinity
+
