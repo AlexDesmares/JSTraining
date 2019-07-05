@@ -665,3 +665,113 @@ compte.crediter(-80);
 
 // "titulaire: Alex, solde: 170"
 console.log(compte.decrire());
+
+//Table
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+console.log(films[0]); // "Le loup de Wall Street"
+console.log(films[1]); // "Vice-Versa"
+console.log(films[2]); // "Babysitting"
+
+// parcourir un tableau
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+for (let i = 0; i < films.length; i++) {
+  console.log(films[i]);
+}
+
+// autre methode
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+films.forEach(film => {
+  console.log(film);
+});
+
+// autre methode
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+for (const film of films) {
+  console.log(film);
+}
+
+// ajout d'une donnee a la suite dans la tableau
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+films.push("Les Bronzés"); // Ajoute le film à la fin du tableau
+console.log(films[3]); // "Les Bronzés"
+
+// ajout d'une donnee au debut du tableau
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+films.unshift("Les Bronzés"); // Ajoute le film au début du tableau
+console.log(films[0]); // "Les Bronzés"
+
+// supprimer la derniere donnee
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+films.pop(); // Supprime le dernier élément
+console.log(films.length); // 2
+console.log(films[2]); // undefined
+
+// supprime une donnee cible
+
+const films = ["Le loup de Wall Street", "Vice-Versa", "Babysitting"];
+
+films.splice(0, 1); // Supprime 1 element à partir de l'indice 0
+console.log(films.length); // 2
+console.log(films[0]); // "Vice-Versa"
+console.log(films[1]); // "Babysitting"
+
+// exercice 1 : ajouter, supprimer des données d'un tableau et lister un tableau
+
+const mousquetaires = ["Athos", "Porthos", "Aramis"];
+
+for (let i = 0; i < mousquetaires.length; i++) {
+  console.log(mousquetaires[i]);
+}
+
+mousquetaires.push("d'Artagnan");
+
+mousquetaires.forEach(mousquetaire => {
+  console.log(mousquetaire);
+});
+
+mousquetaires.pop();
+
+for (const mousquetaire of mousquetaires) {
+  console.log(mousquetaire);
+}
+
+// exercice 2 : calculer la somme d'un tableau
+
+const nombres = [11, 3, 7, 2, 9, 10];
+var resultat = 0;
+
+for (let i = 0; i < nombres.length; i++) {
+  resultat = resultat + nombres[i];
+}
+
+console.log(resultat);
+
+// exercice 3 : afficher la plus grande valeur d'un tableau
+
+const valeurs = [3, 11, 7, 2, 9, 10];
+var resultat = 0;
+
+for (let i = 0; i < valeurs.length; i++) {
+  if (i === 0) {
+    resultat = valeurs[i];
+  }
+  if (valeurs[i] > resultat) {
+    resultat = valeurs[i];
+  }
+}
+
+console.log(resultat);
