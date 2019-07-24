@@ -775,3 +775,150 @@ for (let i = 0; i < valeurs.length; i++) {
 }
 
 console.log(resultat);
+
+//manipuler les chaines de caracteres
+
+console.log("ABC".length); // 3
+console.log("Je suis une chaîne".length); // 18
+
+const mot = "Kangourou";
+const longueurMot = mot.length; // longueurMot contient la valeur 9
+console.log(longueurMot); // 9
+
+const motInitial = "Bora-Bora";
+console.log(motInitial.toLowerCase());  // "bora-bora"
+console.log(motInitial.toUpperCase());  // "BORA-BORA"
+console.log(motInitial);  // "Bora-Bora"
+
+const chaine = "azerty";
+console.log(chaine === "azerty"); // true
+console.log(chaine === "qwerty"); // false
+
+console.log("Azerty" === "azerty"); // false (à cause du A majuscule)
+
+const valeurSaisie = "Quitter";
+console.log(valeurSaisie === "quitter");  // false (à cause du Q majuscule)
+console.log(valeurSaisie.toLowerCase() === "quitter");  // true
+
+const sport = "Tennis-ballon"; // 13 caractères
+console.log(sport[0]); // "T"
+console.log(sport[6]); // "-"
+console.log(sport[13]); // undefined (longueur dépassée)
+
+const prenom = "Odile"; // 5 caractères
+console.log(prenom[0]); // "O"
+console.log(prenom[1]); // "d"
+console.log(prenom[2]); // "i"
+console.log(prenom[3]); // "l"
+console.log(prenom[4]); // "e"
+
+const prenom = "Odile";
+for (let i = 0; i < prenom.length; i++) {
+  console.log(prenom[i]);
+}
+
+const prenom = "Odile";
+for (const lettre of prenom) {
+  console.log(lettre);
+}
+
+const prenom = "Odile";
+const tabPrenom = Array.from(prenom);
+tabPrenom.forEach(lettre => {
+  console.log(lettre);
+});
+
+const chanson = "Honky Tonk Women";
+console.log(chanson.indexOf("onk")); // 1
+console.log(chanson.indexOf("Onk")); // -1 (à cause du O)
+
+const chanson = "Honky Tonk Women";
+
+console.log(chanson.startsWith("Honk")); // true
+console.log(chanson.startsWith("honk")); // false
+console.log(chanson.startsWith("Tonk")); // false
+
+console.log(chanson.endsWith("men")); // true
+console.log(chanson.endsWith("Men")); // false
+console.log(chanson.endsWith("Tonk")); // false
+
+const listeMois = "Jan,Fev,Mar,Avr,Mai,Jun,Jul,Aou,Sep,Oct,Nov,Dec";
+const mois = listeMois.split(",");
+console.log(mois[0]); // "Jan"
+console.log(mois[11]); // "Dec"
+
+//Exercie nombre de voyelles
+
+let mot;
+let motCase;
+let nombreDeVoyelle = 0;
+
+function compterVoyelles(mot){
+  motCase = mot.toLowerCase();
+  const tabMotCase = Array.from(motCase);
+  const tabVoyelles = ["a", "e", "i", "o", "u", "y"];
+  tabMotCase.forEach(lettre => {
+    tabVoyelles.forEach(voyelle => {
+      if (lettre === voyelle) {
+        nombreDeVoyelle ++;
+      }
+    })
+  })
+  
+  return nombreDeVoyelle;
+}
+
+//console.log(compterVoyelles("RadAr")); // 2
+//console.log(compterVoyelles("Tic et Tac")); // 3
+console.log(compterVoyelles("Oasis Oasis Oh")); // 7
+
+// exercice Leet Speak
+
+function convertirMotLeet(message) {
+ 
+  var messageLeet = "";
+   
+  for (var i = 0; i < message.length; i++) {
+    if (message[i].toLowerCase() === "l") { messageLeet += "1"; }
+    else if (message[i].toLowerCase() === "e") { messageLeet += "3"; }
+    else if (message[i].toLowerCase() === "a") { messageLeet += "4"; }
+    else if (message[i].toLowerCase() === "t") { messageLeet += "7"; }
+    else if (message[i].toLowerCase() === "s") { messageLeet += "5"; }
+    else if (message[i].toLowerCase() === "o") { messageLeet += "0"; }
+    else { messageLeet += message[i].toLowerCase(); }
+  }
+   
+  return messageLeet;
+   
+  }
+  
+  console.log(convertirMotLeet("Hello World!")); // "H3110 W0r1d!"
+  console.log(convertirMotLeet("Noob")); // "N008"
+  console.log(convertirMotLeet("Hacker")); // "H4ck3r"
+
+  // exercice palindrome
+
+  var resultat;
+
+function inversementMot(mot) {
+  for (i = mot.length -1; i >= 0; i--) {
+    motInverse += mot[i];
+  }
+  
+  return motInverse;
+}
+
+function estPalindrome(mot) {
+  motInverse = "";
+  inversementMot(mot);
+  if (motInverse.toLowerCase() === mot.toLowerCase()) {
+    resultat = true;
+  } else { resultat = false; }
+  
+  return resultat;
+
+}
+
+console.log(estPalindrome("rAdaR")); // true
+console.log(estPalindrome("KAYAk")); // true
+console.log(estPalindrome("Bora-Bora")); // false
